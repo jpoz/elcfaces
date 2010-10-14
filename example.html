@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>JPOZ</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="http://github.com/DmitryBaranovskiy/raphael/raw/1.0/raphael.js"></script>
+	
+	<script type="text/javascript" src="elcfaces.js"></script>
+	  
+  <script type="text/javascript" charset="utf-8">
+    $(function() {
+      var paper_width = 1500;
+      var paper_height = 1500;
+      
+      var paper = Raphael('paper', paper_width, paper_height);
+
+      var x = 10;
+      var y = 10;
+      var width = 200;
+      var height = 400;
+      var padding = 20;
+      var faces  = ["jpoz","plaxis","dylan","max","victor","yen","danny"];
+      
+      for(var i in faces) {
+        paper[faces[i]](x,y,width,height);
+        x = x + width + padding;
+        if ((x+width)>paper_width) {
+          x = 0
+          y = height + y + padding;
+        }
+      }
+    
+    })
+    
+
+  </script>
+</head>
+  <body>
+    <div id="paper">
+      
+    </div>
+  </body>
+</html>
+
