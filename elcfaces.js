@@ -38,6 +38,6 @@
   
   
   for(var usrnm in faces) {
-    Raphael.fn[usrnm] = new Function("x1","y1","width","height","this.makeELCFace('"+usrnm+"',x1, y1, width, height);")
+    Raphael.fn[usrnm] = new Function("x1","y1","width","height","return this.makeELCFace('"+usrnm+"',x1, y1, width, height);")
   }
 })();
